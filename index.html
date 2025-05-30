@@ -34,17 +34,8 @@
     }
 
     .bubble-1 {
-      background: url('https://www.doubletakedesign.com/sri/bubble-1.svg') no-repeat center center / contain;
-    }
-      .bubble-2 {
-      background: url('https://www.doubletakedesign.com/sri/bubble-2.svg') no-repeat center center / contain;
-    }
-      .bubble-3 {
-      background: url('https://www.doubletakedesign.com/sri/bubble-3.svg') no-repeat center center / contain;
-    }
-
-    .bubble {
       position: relative;
+      background: url('https://www.doubletakedesign.com/sri/bubble-1.svg') no-repeat center center / contain;
       width: 295px;
       height: 362px;
       display: flex;
@@ -55,11 +46,11 @@
       transition: transform 0.3s ease;
     }
 
-    .bubble:hover {
+    .bubble-1:hover {
       transform: scale(1.05);
     }
 
-    .bubble a {
+    .bubble-1 a {
       color: #fff;
       text-decoration: underline;
       text-decoration-thickness: 0.1rem;
@@ -71,7 +62,75 @@
       line-height: 1.4;
     }
 
-    .bubble a:hover {
+    .bubble-1 a:hover {
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+
+    .bubble-2 {
+      position: relative;
+      background: url('https://www.doubletakedesign.com/sri/bubble-2.svg') no-repeat center center / contain;
+      width: 295px;
+      height: 362px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .bubble-2:hover {
+      transform: scale(1.05);
+    }
+
+    .bubble-2 a {
+      color: #fff;
+      text-decoration: underline;
+      text-decoration-thickness: 0.1rem;
+      text-underline-offset: 0.1rem;
+      font-optical-sizing: auto;
+      font-weight: 600;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1.4;
+    }
+
+    .bubble-2 a:hover {
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+
+      .bubble-3 {
+      position: relative;
+      background: url('https://www.doubletakedesign.com/sri/bubble-2.svg') no-repeat center center / contain;
+      width: 295px;
+      height: 362px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .bubble-3:hover {
+      transform: scale(1.05);
+    }
+
+    .bubble-3 a {
+      color: #fff;
+      text-decoration: underline;
+      text-decoration-thickness: 0.1rem;
+      text-underline-offset: 0.1rem;
+      font-optical-sizing: auto;
+      font-weight: 600;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1.4;
+    }
+
+    .bubble-3 a:hover {
       text-decoration: none;
       transition: transform 0.3s ease;
     }
@@ -82,14 +141,14 @@
   <div class="bubble-grid">
     <!-- Row 1 -->
     <div class="row">
-      <div class="bubble bubble-1">
+      <div class="bubble-1">
         <a href="https://www.stagerightinc.com/how-to-keep-virtual-event-participants-connected/">Do your event<br>streaming<br>protocols match<br>the scope of<br>your event?</a>
       </div>
-      <div class="bubble bubble-2">
-        <a href="#">Bubble 2</a>
+      <div class="bubble-2">
+        <a href="#">Are you planning a <br>meeting or putting<br>on a show?</a>
       </div>
-      <div class="bubble bubble-3">
-        <a href="#">Bubble 3</a>
+      <div class="bubble-3">
+        <a href="#">Have<br>unconventional<br>event spaces<br>caused planning<br>headaches?</a>
       </div>
     </div>
 
