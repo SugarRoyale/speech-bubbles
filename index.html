@@ -15,14 +15,20 @@
       padding: 2rem;
     }
 
-    .grid {
+    .bubble-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
+      grid-template-rows: repeat(3, auto);
+      gap: 8rem;
+      padding: 20rem 1rem;
+      justify-items: center;
     }
-
+      .row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8rem;
+    }
+    
     .bubble {
       position: relative;
       background-size: contain;
@@ -42,11 +48,22 @@
     .bubble a {
       color: inherit;
       text-decoration: underline;
+      text-decoration-thickness: 0.1rem;
+      text-underline-offset: 0.1rem;
+      font-optical-sizing: auto;
+      font-weight: 600;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1.4;
+    }
+    
+    .bubble a:hover {
+      text-decoration: none;
+      transition: transform 0.3s ease;
     }
 
     .bubble.yellow {
       background-image: url('https://www.doubletakedesign.com/sri/bubble-yellow.svg');
-      
     }
 
     .bubble.blue {
@@ -68,11 +85,14 @@
   </style>
 </head>
 <body>
-  <div class="grid">
+  <div class="bubble-grid">
     <!-- Row 1 -->
-    <div class="bubble blue">Do your event<br><a href="#">streaming protocols</a><br>match the scope of your event?</div>
-    <div class="bubble yellow stagger">Are you planning a meeting or putting on a show?</div>
-    <div class="bubble yellow">Have <a href="#">unconventional event spaces</a><br>caused planning headaches?</div>
+   <div class="row">
+      <div class="bubble blue">
+        <a href="https://www.stagerightinc.com/how-to-keep-virtual-event-participants-connected/">Do your event<br>streaming<br>protocols match<br>the scope of<br>your event?</a>
+      </div>
+    <div class="bubble yellow stagger"><a href="#">Are you planning a <br>meeting or putting<br>on a show?</a></div>
+    <div class="bubble yellow"><a href="#">Have<br>unconventional<br>event spaces<br>caused planning<br>headaches?</a></div>
 
     <!-- Row 2 -->
     <div class="bubble yellow"><a href="#">Have you paid excessive charges to access power?</div>
