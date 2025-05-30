@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Speech Bubbles with Scroll Animation</title>
+  <title>Speech Bubble Grid</title>
   <style>
     body {
       font-family: sans-serif;
       margin: 0;
       padding: 0;
       background: #000;
+      color: #fff;
     }
+
     .bubble-grid {
       display: grid;
       grid-template-rows: repeat(3, auto);
@@ -18,25 +20,40 @@
       padding: 2rem 1rem;
       justify-items: center;
     }
+
     .row {
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
       flex-wrap: wrap;
+      gap: 1.5rem;
     }
-    .speech-bubble {
+
+    .bubble {
+      position: relative;
       width: 300px;
-      height: auto;
-      fill: #3b5af1;
+      height: 180px;
+      background: url('https://www.doubletakedesign.com/sri/bubble-blue-lower-right.svg') no-repeat center center / contain;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.3s ease;
     }
-    svg text {
-      font-size: 24px;
+
+    .bubble:hover {
+      transform: scale(1.05);
+    }
+
+    .bubble a {
+      color: #fff;
       text-decoration: underline;
-      fill: #fff;
-      pointer-events: none;
+      font-size: 24px;
+      line-height: 1.3;
     }
-    a {
-      pointer-events: all;
+
+    .bubble a:hover {
+      color: hotpink;
     }
   </style>
 </head>
@@ -45,63 +62,42 @@
   <div class="bubble-grid">
     <!-- Row 1 -->
     <div class="row">
-      <svg class="speech-bubble" viewBox="0 0 295 295">
-        <path d="M228.923,270.485l58.021,15.472-15.573-58.4a147.479,147.479,0,1,0-42.447,42.926Z" />
+      <div class="bubble">
         <a href="https://www.stagerightinc.com/how-to-keep-virtual-event-participants-connected/">Do your event streaming protocols match the scope of your event?</a>
-      </svg>
-      <svg class="speech-bubble" viewBox="0 0 120 80">
-        <path d="M10,10 h100 v60 h-80 l-20,10 z" />
-        <a href="#">
-          <text x="60" y="45" text-anchor="middle" alignment-baseline="middle">Bubble 2</text>
-        </a>
-      </svg>
-      <svg class="speech-bubble" viewBox="0 0 120 80">
-        <path d="M10,10 h100 v60 h-80 l-20,10 z" />
-        <a href="#">
-          <text x="60" y="45" text-anchor="middle" alignment-baseline="middle">Bubble 3</text>
-        </a>
-      </svg>
+      </div>
+      <div class="bubble">
+        <a href="#">Bubble 2</a>
+      </div>
+      <div class="bubble">
+        <a href="#">Bubble 3</a>
+      </div>
     </div>
 
     <!-- Row 2 -->
     <div class="row">
-      <svg class="speech-bubble" viewBox="0 0 120 80">
-        <path d="M10,10 h100 v60 h-80 l-20,10 z" />
-        <a href="#">
-          <text x="60" y="45" text-anchor="middle" alignment-baseline="middle">Bubble 4</text>
-        </a>
-      </svg>
-      <svg class="speech-bubble" viewBox="0 0 120 80">
-        <path d="M10,10 h100 v60 h-80 l-20,10 z" />
-        <a href="#">
-          <text x="60" y="45" text-anchor="middle" alignment-baseline="middle">Bubble 5</text>
-        </a>
-      </svg>
+      <div class="bubble">
+        <a href="#">Bubble 4</a>
+      </div>
+      <div class="bubble">
+        <a href="#">Bubble 5</a>
+      </div>
     </div>
 
     <!-- Row 3 -->
     <div class="row">
-      <svg class="speech-bubble" viewBox="0 0 120 80">
-        <path d="M10,10 h100 v60 h-80 l-20,10 z" />
-        <a href="#">
-          <text x="60" y="45" text-anchor="middle" alignment-baseline="middle">Bubble 6</text>
-        </a>
-      </svg>
-      <svg class="speech-bubble" viewBox="0 0 120 80">
-        <path d="M10,10 h100 v60 h-80 l-20,10 z" />
-        <a href="#">
-          <text x="60" y="45" text-anchor="middle" alignment-baseline="middle">Bubble 7</text>
-        </a>
-      </svg>
-      <svg class="speech-bubble" viewBox="0 0 120 80">
-        <path d="M10,10 h100 v60 h-80 l-20,10 z" />
-        <a href="#">
-          <text x="60" y="45" text-anchor="middle" alignment-baseline="middle">Bubble 8</text>
-        </a>
-      </svg>
+      <div class="bubble">
+        <a href="#">Bubble 6</a>
+      </div>
+      <div class="bubble">
+        <a href="#">Bubble 7</a>
+      </div>
+      <div class="bubble">
+        <a href="#">Bubble 8</a>
+      </div>
     </div>
   </div>
 
+  <!-- GSAP Animations -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script>
