@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <title>Staggered Speech Bubbles</title>
@@ -11,7 +12,6 @@
     body {
       font-family: "Montserrat", sans-serif;
       background: black;
-      font-family: sans-serif;
       padding: 2rem;
     }
 
@@ -22,18 +22,18 @@
       padding: 20rem 1rem;
       justify-items: center;
     }
-      .row {
+
+    .row {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       gap: 8rem;
     }
-    
+
     .bubble {
       position: relative;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
+      overflow: hidden;
+      background: none !important;
       width: 295px;
       height: 295px;
       display: flex;
@@ -46,7 +46,31 @@
       transition: transform 0.3s ease;
     }
 
-     .bubble:hover {
+    .bubble::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: var(--bg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      transform: none;
+      z-index: -1;
+    }
+
+    .bubble.flipped-x::before {
+      transform: scaleX(-1);
+    }
+
+    .bubble.flipped-y::before {
+      transform: scaleY(-1);
+    }
+
+    .bubble.stagger {
+      margin-top: 67px;
+    }
+
+    .bubble:hover {
       transform: scale(1.05);
     }
 
@@ -55,64 +79,53 @@
       text-decoration: underline;
       text-decoration-thickness: 0.1rem;
       text-underline-offset: 0.1rem;
-      font-optical-sizing: auto;
       font-weight: 600;
       font-style: normal;
       font-size: 24px;
       line-height: 1.25;
     }
-    
+
     .bubble a:hover {
       text-decoration: none;
       transition: transform 0.3s ease;
     }
 
     .bubble.yellow {
-      background-image: url('https://www.doubletakedesign.com/sri/bubble-yellow.svg');
+      --bg: url('https://www.doubletakedesign.com/sri/bubble-yellow.svg');
     }
 
     .bubble.blue {
-      background-image: url('https://www.doubletakedesign.com/sri/bubble-blue.svg');
+      --bg: url('https://www.doubletakedesign.com/sri/bubble-blue.svg');
       color: white;
-    }
-
-    .bubble.flipped-x {
-      transform: scaleX(-1);
-    }
-
-    .bubble.flipped-y {
-      transform: scaleY(-1);
-    }
-
-    .bubble.stagger {
-      margin-top: 67px;
     }
   </style>
 </head>
 <body>
   <div class="bubble-grid">
     <!-- Row 1 -->
-   <div class="row">
+    <div class="row">
       <div class="bubble blue">
         <a href="https://www.stagerightinc.com/how-to-keep-virtual-event-participants-connected/">Do your event<br>streaming<br>protocols match<br>the scope of<br>your event?</a>
       </div>
-    <div class="bubble yellow stagger"><a href="#">Are you planning a meeting or putting<br>on a show?</a></div>
-    <div class="bubble yellow flipped-y"><a href="#">Have unconventional event spaces caused planning headaches?</a></div>
-        </div>
+      <div class="bubble yellow stagger"><a href="#">Are you planning a meeting or putting<br>on a show?</a></div>
+      <div class="bubble yellow flipped-y"><a href="#">Have unconventional event spaces caused planning headaches?</a></div>
+    </div>
 
     <!-- Row 2 -->
-     <div class="row">
-    <div class="bubble yellow flipped-y flipped-x"><a href="#">Have you paid<br>excessive charges<br>to access power?</a></div>
-    <div class="bubble blue flipped-x"><a href="#">Is paying additional<br>hotel fees and<br>service charges<br>an ongoing issue?</a></div>
-          </div>
+    <div class="row">
+      <div class="bubble yellow flipped-y flipped-x"><a href="#">Have you paid<br>excessive charges<br>to access power?</a></div>
+      <div class="bubble blue flipped-x"><a href="#">Is paying additional<br>hotel fees and<br>service charges<br>an ongoing issue?</a></div>
+    </div>
 
     <!-- Row 3 -->
-      <div class="row">
-    <div class="bubble blue stagger"><a href="#">Do you need guidance about the difference between event staging and stage craft?</a></div>
-    <div class="bubble yellow"><a href="#">Are you aware<br>how “when”<br>accessing the<br>event space can<br>impact cost?</a></div>
-    <div class="bubble yellow stagger"><a href="#">How important<br>is high-definition<br>video in event<br>production?</a></div>
+    <div class="row">
+      <div class="bubble blue stagger"><a href="#">Do you need guidance about the difference between event staging and stage craft?</a></div>
+      <div class="bubble yellow"><a href="#">Are you aware<br>how “when”<br>accessing the<br>event space can<br>impact cost?</a></div>
+      <div class="bubble yellow stagger"><a href="#">How important<br>is high-definition<br>video in event<br>production?</a></div>
+    </div>
   </div>
-     <!-- GSAP Animations -->
+
+  <!-- GSAP Animations -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script>
