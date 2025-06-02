@@ -97,6 +97,35 @@
       --bg: url('https://www.doubletakedesign.com/sri/bubble-blue.svg');
       color: white;
     }
+
+     /* Styles for screens with a minimum width of 400px (e.g., mobile) */
+@media (min-width: 400px) {
+.bubble-grid {
+      grid-template-rows: repeat(1, auto);
+ gap: 7.5rem;
+    }
+    /* Styles for screens with a minimum width of 768px (e.g., tablets) */
+@media (min-width: 768px) {
+.bubble-grid {
+      grid-template-rows: repeat(2, auto);
+
+    }
+
+    .row {
+      gap: 1.875rem;
+    }
+}
+
+/* Styles for screens with a minimum width of 1024px (e.g., laptops) */
+@media (min-width: 1024px) {
+ .bubble-grid {
+      gap: 8.75rem;
+    }
+
+    .row {
+      gap: 1.875rem;
+    }
+}
   </style>
 </head>
 <body>
