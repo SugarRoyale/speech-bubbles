@@ -30,6 +30,15 @@
       gap: 8rem;
     }
 
+    .floating {
+      position: absolute;
+      top: 10px; /* Adjust as needed */
+      left: 10px; /* Adjust as needed */
+      background-color: rgba(0, 0, 0, 0.5); /* Optional background */
+      padding: 10px; /* Optional padding */
+      z-index: 100; /* Give a higher z-index */
+      }
+
     .bubble {
       position: relative;
       overflow: hidden;
@@ -100,8 +109,13 @@
   </style>
 </head>
 <body>
+  
   <div class="bubble-grid">
     <!-- Row 1 -->
+     <div class="row floating">
+       Problems we solve
+       Events can present challenges. And every challenge has a solution. Through thousands of successful events, we offer helpful advice that identifies and addresses potential or unforeseen production execution issues.
+     </div>
     <div class="row">
       <div class="bubble blue">
         <a href="https://www.stagerightinc.com/how-to-keep-virtual-event-participants-connected/">Do your<br>event streaming<br>protocols match<br>the scope of<br>your event?</a>
